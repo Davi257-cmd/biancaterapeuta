@@ -8,11 +8,23 @@ interface HeroSectionProps {
 export function HeroSection({ onBooking }: HeroSectionProps) {
   return (
     <section 
-      className="relative min-h-[90vh] md:min-h-screen bg-gradient-hero overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/secao-bio/secao-bio.png')"
-      }}
+      className="relative min-h-[90vh] md:min-h-screen bg-gradient-hero overflow-hidden"
     >
+      {/* Background Mobile */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+        style={{
+          backgroundImage: "url('/secao-bio/secao-bio.png')"
+        }}
+      />
+      
+      {/* Background Desktop */}
+      <div 
+        className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/primeira-secao/background-primeira-secao.png')"
+        }}
+      />
       {/* Decorative elements - smaller on mobile */}
       <div className="absolute top-10 left-4 w-20 md:w-32 h-20 md:h-32 bg-gold/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-4 w-24 md:w-40 h-24 md:h-40 bg-rose/10 rounded-full blur-3xl" />

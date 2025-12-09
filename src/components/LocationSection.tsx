@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, Phone } from "lucide-react";
-// TODO: Adicionar a imagem spa-interior.jpg na pasta src/assets
-// import spaInterior from "@/assets/spa-interior.jpg";
-const spaInterior = "https://via.placeholder.com/800x600/E8D5C4/D4A574?text=Espaço+de+Atendimento";
 
 interface LocationSectionProps {
   onBooking: () => void;
@@ -27,12 +24,15 @@ export function LocationSection({ onBooking }: LocationSectionProps) {
         
         <div className="grid lg:grid-cols-2 gap-5 md:gap-8">
           <div className="bg-card rounded-xl md:rounded-3xl p-5 md:p-8 shadow-card border border-border/50 animate-slide-up">
-            <div className="rounded-lg md:rounded-2xl overflow-hidden mb-4 md:mb-8">
-              <img
-                src={spaInterior}
-                alt="Espaço de atendimento da Bianca em Angra dos Reis"
-                className="w-full h-40 sm:h-48 md:h-56 object-cover"
-              />
+            <div className="rounded-lg md:rounded-2xl overflow-hidden mb-4 md:mb-8 bg-gradient-to-br from-gold/20 via-rose-light/30 to-nude-light h-40 sm:h-48 md:h-56 flex items-center justify-center border border-gold/30 shadow-soft">
+              <div className="text-center">
+                <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-1">
+                  Espaço
+                </h3>
+                <p className="text-script italic text-3xl sm:text-4xl md:text-5xl text-primary">
+                  Bianca
+                </p>
+              </div>
             </div>
             
             <div className="space-y-4 md:space-y-6">
