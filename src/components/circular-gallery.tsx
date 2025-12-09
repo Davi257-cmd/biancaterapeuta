@@ -116,8 +116,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
 
             const isVideo = item.photo.type === 'video' || item.photo.url.endsWith('.mp4');
 
-            const cardWidth = isMobile ? 200 : 300;
-            const cardHeight = isMobile ? 250 : 400;
+            const cardWidth = isMobile ? 180 : 300;
+            const cardHeight = isMobile ? 220 : 400;
 
             return (
               <div

@@ -15,8 +15,8 @@ const indications = [
 
 export function ForWhomSection({ onBooking }: ForWhomSectionProps) {
   return (
-    <section className="py-10 md:py-20 px-4 bg-card" id="para-quem">
-      <div className="container mx-auto">
+    <section className="py-12 md:py-20 px-5 sm:px-6 md:px-4 bg-card" id="para-quem">
+      <div className="container mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Content */}
           <div className="animate-slide-up">
@@ -29,17 +29,17 @@ export function ForWhomSection({ onBooking }: ForWhomSectionProps) {
               {" "}foi pensado
             </h2>
             
-            <div className="space-y-2 md:space-y-4 mb-6 md:mb-8">
+            <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
               {indications.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-start gap-2 md:gap-4 p-2.5 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-r from-rose-light/30 to-transparent border border-border/50 animate-slide-up"
+                  className="flex items-start gap-3 md:gap-4 p-3.5 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-r from-rose-light/30 to-transparent border border-border/50 animate-slide-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-gold flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 md:w-4 md:h-4 text-foreground" />
+                  <div className="w-6 h-6 md:w-6 md:h-6 rounded-full bg-gradient-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-foreground" />
                   </div>
-                  <p className="text-foreground leading-relaxed text-xs md:text-base">{item}</p>
+                  <p className="text-foreground leading-relaxed text-sm md:text-base flex-1">{item}</p>
                 </div>
               ))}
             </div>

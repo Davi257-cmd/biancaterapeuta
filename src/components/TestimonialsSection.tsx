@@ -40,8 +40,8 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-10 md:py-20 px-4 bg-card" id="depoimentos">
-      <div className="container mx-auto">
+    <section className="py-12 md:py-20 px-5 sm:px-6 md:px-4 bg-card" id="depoimentos">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-16 animate-slide-up">
           <span className="inline-block text-xs md:text-sm font-medium text-gold uppercase tracking-wider mb-2 md:mb-4">
@@ -57,11 +57,11 @@ export function TestimonialsSection() {
         </div>
         
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.name}
-              className="relative p-4 md:p-6 rounded-xl md:rounded-3xl bg-gradient-to-br from-nude-light to-card border border-border/50 shadow-soft hover:shadow-card transition-all duration-300 animate-slide-up group"
+              className="relative p-5 md:p-6 rounded-xl md:rounded-3xl bg-gradient-to-br from-nude-light to-card border border-border/50 shadow-soft hover:shadow-card transition-all duration-300 animate-slide-up group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Quote icon */}

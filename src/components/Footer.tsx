@@ -2,8 +2,8 @@ import { Instagram, Heart } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-foreground py-8 md:py-12 px-4">
-      <div className="container mx-auto">
+    <footer className="bg-foreground py-8 md:py-12 px-5 sm:px-6 md:px-4">
+      <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col items-center text-center">
           {/* Logo/Name */}
           <div className="mb-4 md:mb-6">

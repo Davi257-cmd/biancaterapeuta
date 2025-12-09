@@ -89,7 +89,7 @@ export function InstagramCarouselSection() {
 
   useEffect(() => {
     const updateRadius = () => {
-      setRadius(window.innerWidth < 768 ? 150 : window.innerWidth < 1024 ? 300 : 400);
+      setRadius(window.innerWidth < 1024 ? 300 : 400);
     };
     
     updateRadius();
@@ -98,8 +98,8 @@ export function InstagramCarouselSection() {
   }, []);
 
   return (
-    <section className="py-10 md:py-20 px-4 bg-gradient-nude overflow-hidden relative" id="instagram">
-      <div className="container mx-auto">
+    <section className="py-12 md:py-20 px-5 sm:px-6 md:px-4 bg-gradient-nude overflow-hidden relative" id="instagram">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-16 animate-slide-up">
           <span className="inline-block text-xs md:text-sm font-medium text-gold uppercase tracking-wider mb-2 md:mb-4">
@@ -114,8 +114,8 @@ export function InstagramCarouselSection() {
           </p>
         </div>
 
-        {/* Circular Gallery Container */}
-        <div className="relative w-full" style={{ height: '100vh', minHeight: '600px' }}>
+        {/* Circular Gallery Container - Hidden on mobile, shown on tablet+ */}
+        <div className="hidden md:block relative w-full" style={{ height: '100vh', minHeight: '600px' }}>
           <div className="w-full h-full sticky top-0 flex flex-col items-center justify-center overflow-hidden">
             <div className="w-full h-full">
               <CircularGallery 
@@ -125,6 +125,39 @@ export function InstagramCarouselSection() {
               />
             </div>
           </div>
+        </div>
+
+        {/* Mobile Grid - Simple grid for mobile */}
+        <div className="md:hidden grid grid-cols-2 gap-3 mb-8">
+          {galleryData.slice(0, 6).map((item, index) => {
+            const isVideo = item.photo.type === 'video' || item.photo.url.endsWith('.mp4');
+            return (
+              <a
+                key={item.photo.url}
+                href="https://instagram.com/biancaterapeuta_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative aspect-square rounded-lg overflow-hidden group border-2 border-gold/30 hover:border-gold/60 transition-all duration-300"
+              >
+                {isVideo ? (
+                  <video
+                    src={item.photo.url}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={item.photo.url}
+                    alt={item.photo.text}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                )}
+              </a>
+            );
+          })}
         </div>
 
         {/* CTA */}

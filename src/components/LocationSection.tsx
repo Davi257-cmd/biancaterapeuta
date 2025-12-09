@@ -10,8 +10,8 @@ interface LocationSectionProps {
 
 export function LocationSection({ onBooking }: LocationSectionProps) {
   return (
-    <section className="py-10 md:py-20 px-4 bg-gradient-nude" id="localizacao">
-      <div className="container mx-auto">
+    <section className="py-12 md:py-20 px-5 sm:px-6 md:px-4 bg-gradient-nude" id="localizacao">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-8 md:mb-12 animate-slide-up">
           <span className="inline-block text-xs md:text-sm font-medium text-gold uppercase tracking-wider mb-2 md:mb-4">
             Onde encontrar
@@ -25,13 +25,13 @@ export function LocationSection({ onBooking }: LocationSectionProps) {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-stretch">
-          <div className="bg-card rounded-xl md:rounded-3xl p-4 md:p-8 shadow-card border border-border/50 animate-slide-up">
+        <div className="grid lg:grid-cols-2 gap-5 md:gap-8">
+          <div className="bg-card rounded-xl md:rounded-3xl p-5 md:p-8 shadow-card border border-border/50 animate-slide-up">
             <div className="rounded-lg md:rounded-2xl overflow-hidden mb-4 md:mb-8">
               <img
                 src={spaInterior}
                 alt="Espaço de atendimento da Bianca em Angra dos Reis"
-                className="w-full h-32 md:h-48 object-cover"
+                className="w-full h-40 sm:h-48 md:h-56 object-cover"
               />
             </div>
             
@@ -80,6 +80,21 @@ export function LocationSection({ onBooking }: LocationSectionProps) {
                 </div>
               </div>
             </div>
+
+            {/* Mapa dentro do card no mobile */}
+            <div className="mt-4 md:mt-6 lg:hidden rounded-lg overflow-hidden shadow-soft h-[250px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8!2d-44.318!3d-23.007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua%20Coronel%20Carvalho%2C%20149%20-%20Centro%2C%20Angra%20dos%20Reis%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização - Bianca Oliveira Terapeuta"
+                className="w-full h-full"
+              />
+            </div>
             
             <Button 
               onClick={onBooking}
@@ -90,17 +105,18 @@ export function LocationSection({ onBooking }: LocationSectionProps) {
             </Button>
           </div>
           
-          <div className="rounded-xl md:rounded-3xl overflow-hidden shadow-card animate-fade-in delay-200 min-h-[250px] md:min-h-[400px]">
+          {/* Mapa separado no desktop */}
+          <div className="hidden lg:block rounded-xl md:rounded-3xl overflow-hidden shadow-card animate-fade-in delay-200 h-full">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8!2d-44.318!3d-23.007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua%20Coronel%20Carvalho%2C%20149%20-%20Centro%2C%20Angra%20dos%20Reis%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1"
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: '100%' }}
+              style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Localização - Bianca Oliveira Terapeuta"
-              className="w-full h-full min-h-[250px] md:min-h-[400px]"
+              className="w-full h-full"
             />
           </div>
         </div>

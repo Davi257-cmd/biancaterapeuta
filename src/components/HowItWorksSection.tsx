@@ -33,8 +33,8 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section className="py-10 md:py-20 px-4 bg-gradient-nude overflow-hidden" id="como-funciona">
-      <div className="container mx-auto">
+    <section className="py-12 md:py-20 px-5 sm:px-6 md:px-4 bg-gradient-nude overflow-hidden" id="como-funciona">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-8 md:mb-16 animate-slide-up">
           <span className="inline-block text-xs md:text-sm font-medium text-gold uppercase tracking-wider mb-2 md:mb-4">
             O processo
@@ -46,11 +46,11 @@ export function HowItWorksSection() {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="space-y-3 md:space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {steps.map((step, index) => (
               <div 
                 key={step.number}
-                className="flex gap-3 md:gap-4 p-3 md:p-6 rounded-xl md:rounded-3xl bg-card border border-border/50 shadow-soft hover:shadow-card transition-all duration-300 animate-slide-up group"
+                className="flex gap-3 md:gap-4 p-4 md:p-6 rounded-xl md:rounded-3xl bg-card border border-border/50 shadow-soft hover:shadow-card transition-all duration-300 animate-slide-up group"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className={`flex-shrink-0 w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>

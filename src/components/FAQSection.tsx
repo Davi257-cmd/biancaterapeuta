@@ -55,7 +55,7 @@ const faqs = [
 
 export function FAQSection({ onBooking }: FAQSectionProps) {
   return (
-    <section className="py-10 md:py-20 px-4 bg-card" id="duvidas">
+    <section className="py-12 md:py-20 px-5 sm:px-6 md:px-4 bg-card" id="duvidas">
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-12 animate-slide-up">

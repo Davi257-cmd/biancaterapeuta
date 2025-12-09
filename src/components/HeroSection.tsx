@@ -10,7 +10,7 @@ export function HeroSection({ onBooking }: HeroSectionProps) {
     <section 
       className="relative min-h-[90vh] md:min-h-screen bg-gradient-hero overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/primeira-secao/background-primeira-secao.png')"
+        backgroundImage: "url('/secao-bio/secao-bio.png')"
       }}
     >
       {/* Decorative elements - smaller on mobile */}
@@ -22,8 +22,8 @@ export function HeroSection({ onBooking }: HeroSectionProps) {
       {/* Overlay escuro para melhor contraste do texto */}
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-foreground/20 to-transparent z-0" />
       
-      <div className="container mx-auto px-4 py-6 md:py-20 relative z-10">
-        <div className="flex flex-col items-start justify-center min-h-[80vh] max-w-4xl">
+      <div className="container mx-auto px-5 sm:px-6 md:px-4 py-8 md:py-20 relative z-10 max-w-7xl">
+        <div className="flex flex-col items-start justify-center min-h-[80vh] max-w-4xl mx-auto">
           {/* Text Content */}
           <div className="text-left animate-slide-up w-full">
             {/* Badge - smaller on mobile */}
