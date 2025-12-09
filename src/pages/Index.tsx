@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { ForWhomSection } from "@/components/ForWhomSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { InstagramCarouselSection } from "@/components/InstagramCarouselSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { LocationSection } from "@/components/LocationSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -22,6 +23,7 @@ const Index = () => {
       <BenefitsSection onBooking={openBooking} />
       <ForWhomSection onBooking={openBooking} />
       <HowItWorksSection />
+      <InstagramCarouselSection />
       <TestimonialsSection />
       <LocationSection onBooking={openBooking} />
       <FAQSection onBooking={openBooking} />

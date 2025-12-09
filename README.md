@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Método DrenoWoman - Site Institucional
 
-## Project info
+Site institucional da terapeuta Bianca Oliveira, especializada em drenagem linfática e terapia integrativa em Angra dos Reis.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Tecnologias
 
-## How can I edit this code?
+Este projeto foi construído com:
 
-There are several ways of editing your application.
+- **Vite** - Build tool e dev server
+- **React** - Biblioteca JavaScript para interfaces
+- **TypeScript** - Superset do JavaScript com tipagem estática
+- **Tailwind CSS** - Framework CSS utility-first
+- **shadcn/ui** - Componentes UI acessíveis e customizáveis
+- **React Router** - Roteamento para aplicações React
 
-**Use Lovable**
+## 📋 Pré-requisitos
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js (versão 18 ou superior)
+- npm ou yarn
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Instalação
 
-**Use your preferred IDE**
+1. Clone o repositório:
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd bianca-massagista
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Instale as dependências:
+```bash
+npm install
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Inicie o servidor de desenvolvimento:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível em `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Scripts Disponíveis
 
-**Use GitHub Codespaces**
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria a build de produção
+- `npm run preview` - Visualiza a build de produção
+- `npm run lint` - Executa o linter
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📁 Estrutura do Projeto
 
-## What technologies are used for this project?
+```
+bianca-massagista/
+├── public/              # Arquivos estáticos
+│   ├── instagram/       # Imagens e vídeos do Instagram
+│   ├── primeira-secao/   # Imagens da primeira seção
+│   └── secao-bio/       # Imagens da seção bio
+├── src/
+│   ├── components/      # Componentes React
+│   │   ├── ui/          # Componentes shadcn/ui
+│   │   └── ...          # Componentes customizados
+│   ├── pages/           # Páginas da aplicação
+│   ├── hooks/           # Custom hooks
+│   ├── lib/             # Utilitários
+│   └── index.css        # Estilos globais
+└── ...
+```
 
-This project is built with:
+## 🎨 Paleta de Cores
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+O projeto utiliza uma paleta de cores personalizada definida no `tailwind.config.ts`:
+- **Gold** - Dourado principal
+- **Rose** - Rosa principal
+- **Nude** - Bege/nude
 
-## How can I deploy this project?
+## 📝 Licença
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Este projeto é privado e de propriedade de Bianca Oliveira.
 
-## Can I connect a custom domain to my Lovable project?
+## 👤 Contato
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Instagram**: [@biancaterapeuta_](https://instagram.com/biancaterapeuta_)
+- **Localização**: Rua Coronel Carvalho, 149 - Centro, Angra dos Reis - RJ

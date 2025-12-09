@@ -14,6 +14,7 @@ export interface GalleryItem {
     text: string;
     pos?: string;
     by: string;
+    type?: 'image' | 'video';
   };
 }
 
@@ -113,6 +114,11 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
             const normalizedAngle = Math.abs(relativeAngle > 180 ? 360 - relativeAngle : relativeAngle);
             const opacity = Math.max(0.3, 1 - (normalizedAngle / 180));
 
+            const isVideo = item.photo.type === 'video' || item.photo.url.endsWith('.mp4');
+
+            const cardWidth = isMobile ? 200 : 300;
+            const cardHeight = isMobile ? 250 : 400;
+
             return (
               <div
                 key={item.photo.url} 
@@ -120,13 +126,13 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 aria-label={item.common}
                 className="absolute"
                 style={{
-                  width: isMobile ? '200px' : '300px',
-                  height: isMobile ? '250px' : '400px',
+                  width: `${cardWidth}px`,
+                  height: `${cardHeight}px`,
                   transform: `rotateY(${itemAngle}deg) translateZ(${radius}px)`,
                   left: '50%',
                   top: '50%',
-                  marginLeft: isMobile ? '-100px' : '-150px',
-                  marginTop: isMobile ? '-125px' : '-200px',
+                  marginLeft: `-${cardWidth / 2}px`,
+                  marginTop: `-${cardHeight / 2}px`,
                   opacity: opacity,
                   transition: 'opacity 0.3s linear'
                 }}
@@ -135,14 +141,26 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   href="https://instagram.com/biancaterapeuta_"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative w-full h-full rounded-lg shadow-2xl overflow-hidden group border-2 border-gold/30 hover:border-gold/60 transition-all duration-300"
+                  className="relative w-full h-full rounded-lg shadow-2xl overflow-hidden group border-2 border-gold/30 hover:border-gold/60 transition-all duration-300 block"
                 >
-                  <img
-                    src={item.photo.url}
-                    alt={item.photo.text}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    style={{ objectPosition: item.photo.pos || 'center' }}
-                  />
+                  {isVideo ? (
+                    <video
+                      src={item.photo.url}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      style={{ objectPosition: item.photo.pos || 'center' }}
+                    />
+                  ) : (
+                    <img
+                      src={item.photo.url}
+                      alt={item.photo.text}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{ objectPosition: item.photo.pos || 'center' }}
+                    />
+                  )}
                 </a>
               </div>
             );
